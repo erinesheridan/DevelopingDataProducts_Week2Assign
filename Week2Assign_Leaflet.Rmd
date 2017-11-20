@@ -1,0 +1,23 @@
+## Week 2 Assignment - Chicago Landmarks
+## Created 11-20-2017
+
+```{r, echo=FALSE}
+library(leaflet)
+ChicagoLatLong <- data.frame(
+  lat = c(41.878876, 41.898770, 41.790573, 41.872172, 41.921092),
+  lng = c(-87.635915, -87.622917, -87.583066, -87.61875, -87.633991))
+
+ChicagoSites <- c(
+  "<a href='http://www.willistower.com/'>Willis Tower</a>",
+  "<a href='http://johnhancockcenterchicago.com//'>John Hancock Center</a>",
+  "<a href='https://www.msichicago.org/'>Museum of Science and Industry</a>",
+  "<a href='http://www.chicagoparkdistrict.com/parks/grant-park/'>Grant Park</a>",
+  "<a href='http://www.lpzoo.org/'>Lincoln Park Zoo</a>"
+)
+
+ChicagoLatLong %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(popup = ChicagoSites)
+```
+
